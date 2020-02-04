@@ -10,16 +10,16 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "post_statistics")
-public class PostStatistics implements Serializable {
+@Table(name = "post_statistic")
+public class PostStatistic implements Serializable {
     @Id
     @ManyToOne
-    @JoinColumn(name = "post_id")
+    @JoinColumn(name = "post_id", insertable = false, updatable = false, nullable = false)
     private Post post;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
     private User user;
 
     @Basic
@@ -27,14 +27,14 @@ public class PostStatistics implements Serializable {
     private Boolean liked;
 
     @Basic
-    @Column(name = "viewed")
+    @Column(name = "viewed", nullable = false)
     private Boolean viewed;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PostStatistics that = (PostStatistics) o;
+        PostStatistic that = (PostStatistic) o;
         return Objects.equals(post, that.post) &&
                 Objects.equals(user, that.user) &&
                 Objects.equals(liked, that.liked) &&

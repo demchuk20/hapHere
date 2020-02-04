@@ -14,16 +14,16 @@ import java.util.Objects;
 public class Relationship implements Serializable {
     @Id
     @ManyToOne
-    @JoinColumn(name = "user_id", updatable = false, insertable = false)
+    @JoinColumn(name = "user_id", updatable = false, insertable = false, nullable = false)
     private User user;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "following_id", updatable = false, insertable = false)
+    @JoinColumn(name = "following_id", updatable = false, insertable = false, nullable = false)
     private User following;
 
     @Basic
-    @Column(name = "date")
+    @Column(name = "date", nullable = false)
     private Timestamp date;
 
 

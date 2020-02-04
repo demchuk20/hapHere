@@ -12,23 +12,24 @@ import java.util.Objects;
 @Entity
 public class Comment {
     @Id
+    @GeneratedValue
     @Column(name = "id_comment")
     private Integer idComment;
 
     @ManyToOne
-    @JoinColumn(name = "post_id")
+    @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Basic
-    @Column(name = "comment")
+    @Column(name = "comment", nullable = false)
     private String comment;
 
     @Basic
-    @Column(name = "date")
+    @Column(name = "date", nullable = false)
     private Timestamp date;
 
     @Override

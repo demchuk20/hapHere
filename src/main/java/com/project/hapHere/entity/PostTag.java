@@ -10,16 +10,16 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "post_tags")
-public class PostTags implements Serializable {
+@Table(name = "post_tag")
+public class PostTag implements Serializable {
     @Id
     @ManyToOne
-    @JoinColumn(name = "post_id")
+    @JoinColumn(name = "post_id", insertable = false, updatable = false, nullable = false)
     private Post post;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "tag_id")
+    @JoinColumn(name = "tag_id", insertable = false, updatable = false, nullable = false)
     private Tag tag;
 
 
@@ -27,7 +27,7 @@ public class PostTags implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PostTags that = (PostTags) o;
+        PostTag that = (PostTag) o;
         return Objects.equals(post, that.post) &&
                 Objects.equals(tag, that.tag);
     }

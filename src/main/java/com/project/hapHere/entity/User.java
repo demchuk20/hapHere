@@ -12,7 +12,7 @@ import java.util.Objects;
 public class User {
     @Id
     @GeneratedValue
-    @Column(name = "id_user", nullable = false)
+    @Column(name = "id_user")
     private Integer idUser;
 
     @Basic

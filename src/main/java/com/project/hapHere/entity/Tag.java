@@ -16,7 +16,7 @@ public class Tag {
     private Integer idTag;
 
     @Basic
-    @Column(name = "tag_name", nullable = false)
+    @Column(name = "tag_name", unique = true, nullable = false)
     private String tagName;
 
 

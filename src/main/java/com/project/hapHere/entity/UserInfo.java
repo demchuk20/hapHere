@@ -26,7 +26,7 @@ public class UserInfo implements Serializable {
     private String info;
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", unique = true)
     private String phone;
 
 

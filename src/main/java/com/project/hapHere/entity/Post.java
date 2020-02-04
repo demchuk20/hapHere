@@ -17,7 +17,7 @@ public class Post {
     private Integer idPost;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", updatable = false, nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User userId;
 
     @Basic
