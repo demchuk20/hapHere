@@ -1,0 +1,2 @@
+INSERT INTO hap_here.post (id_post, user_id, title, content, published_time, event_time) VALUES (1, 1, 'Concert', '', '2020-02-05 14:25:25', '2020-02-20 14:30:00');
+INSERT INTO hap_here.post (id_post, user_id, title, content, published_time, event_time) VALUES (2, 1, 'Festival', null, '2020-02-05 14:26:00', '2020-06-05 12:30:00');

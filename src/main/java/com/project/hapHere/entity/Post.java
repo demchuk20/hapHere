@@ -32,6 +32,9 @@ public class Post {
     @Column(name = "published_time", nullable = false)
     private Timestamp publishedTime;
 
+    @Basic
+    @Column(name = "event_time")
+    private Timestamp eventTime;
 
     @Override
     public boolean equals(Object o) {
@@ -42,11 +45,12 @@ public class Post {
                 Objects.equals(userId, post.userId) &&
                 Objects.equals(title, post.title) &&
                 Objects.equals(content, post.content) &&
-                Objects.equals(publishedTime, post.publishedTime);
+                Objects.equals(publishedTime, post.publishedTime) &&
+                Objects.equals(eventTime, post.eventTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPost, userId, title, content, publishedTime);
+        return Objects.hash(idPost, userId, title, content, publishedTime, eventTime);
     }
 }
