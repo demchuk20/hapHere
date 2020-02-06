@@ -11,6 +11,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
+@IdClass(RelationshipPK.class)
 public class Relationship implements Serializable {
     @Id
     @ManyToOne

@@ -4,17 +4,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Objects;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "user_info")
-public class UserInfo implements Serializable {
+public class UserInfo {
     @Id
+    private Integer id;
+
     @OneToOne
-    @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id_user")
+    @JoinColumn(name = "user_id", nullable = false)
+    @MapsId
     private User user;
 
     @Basic
@@ -35,7 +37,8 @@ public class UserInfo implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserInfo userInfo = (UserInfo) o;
-        return Objects.equals(user, userInfo.user) &&
+        return Objects.equals(id, userInfo.id) &&
+                Objects.equals(user, userInfo.user) &&
                 Objects.equals(email, userInfo.email) &&
                 Objects.equals(info, userInfo.info) &&
                 Objects.equals(phone, userInfo.phone);

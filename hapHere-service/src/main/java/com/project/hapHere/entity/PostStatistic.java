@@ -11,6 +11,7 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "post_statistic")
+@IdClass(PostStatisticPK.class)
 public class PostStatistic implements Serializable {
     @Id
     @ManyToOne
