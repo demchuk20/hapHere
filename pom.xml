@@ -15,6 +15,7 @@
 	<description>Project</description>
 <modules>
 	<module>hapHere-service</module>
+    <module>hapHere-web</module>
 </modules>
 
 </project>
