@@ -1,0 +1,26 @@
+#sign-up:hover {
+  background: #000;
+  color: #ffbd30;
+  border: #ffbd30;
+}
+
+#sign-up {
+  background: #ffbd30;
+  color: #000;
+  border: #fff;
+}
+
+a{
+  color: #ffbd30;
+}
+
+#links{
+  color: #fff;
+  background: #000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.footer-copyright{
+  color: #fff;
+  background: #000;
+}
